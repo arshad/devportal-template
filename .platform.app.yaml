@@ -126,3 +126,10 @@ crons:
     drupal:
         spec: '*/20 * * * *'
         cmd: 'cd web ; drush core-cron'
+
+source:
+  operations:
+    install:
+      command: |
+        set -e
+        drush si apigee_devportal_kickstart --account-name=admin --account-pass=admin --account-mail='arshad@chummun.com' --site-name=$SITE_NAME
